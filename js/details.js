@@ -139,23 +139,16 @@ $('.audio').click(function(){
 
     index = SwiperList.realIndex
     index1 = index+1
-
+    console.log(isplay)
     if(!isplay){
-        // playAudio[0].pause()
-        // playAudio[0].play();
-        // isplay = true
-        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
-        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
-        isplay = true
-    }else{
-        // playAudio[0].pause();
-        // playAudio[0].load();
-        // isplay = false
-        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
-        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
-        isplay = false
-    }
 
+        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
+
+    }else{
+
+        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
+    }
+    isplay = !isplay
 });
 
 
