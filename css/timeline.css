@@ -113,283 +113,203 @@ body{
 
 /*夏朝*/
 .xia{
-    background-color: red;
+    /*background-color: red;*/
 }
 .xia img{
     width: 8.5%;
-    position: absolute;
-    top: -.35rem;
-    left: 5%;
+    /*position: absolute;*/
+    /*top: -.35rem;*/
+    /*left: 5%;*/
 }
 .xia p{
-    position: absolute;
-    top: 3%;
-    left: 8%;
+    /*position: absolute;*/
+    /*top: 3%;*/
+    /*left: 8%;*/
 }
 .xia span{
-    position: absolute;
-    top: 22%;
-    left: 0%;
+    /*position: absolute;*/
+    /*top: 22%;*/
+    /*left: 0%;*/
 }
-/*商朝*/
-.shang img{
+/*!*商朝*!*/
+/*.shang img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: -.35rem;*/
+    /*left: 3.9rem;*/
+/*}*/
+/*.shang p{*/
+    /*position: absolute;*/
+    /*top: 2%;*/
+    /*left: 26%;*/
+/*}*/
+/*.shang span{*/
+    /*position: absolute;*/
+    /*top: 22%;*/
+    /*left: 18%;*/
+/*}*/
+/*!*西周*!*/
+/*.xizhou img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: -.35rem;*/
+    /*left: 6.9rem;*/
+/*}*/
+/*.xizhou p{*/
+    /*position: absolute;*/
+    /*top: 2%;*/
+    /*left: 42.5%;*/
+/*}*/
+/*.xizhou span{*/
+    /*position: absolute;*/
+    /*top: 22%;*/
+    /*left: 37%;*/
+/*}*/
+/*!*东周*!*/
+/*.dongzhou img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: -.35rem;*/
+    /*left: 9.95rem;*/
+/*}*/
+/*.dongzhou p{*/
+    /*position: absolute;*/
+    /*top: 2%;*/
+    /*left: 60.5%;*/
+/*}*/
+/*.dongzhou span{*/
+    /*position: absolute;*/
+    /*top: 22%;*/
+    /*left: 55.5%;*/
+/*}*/
+/*!*秦*!*/
+/*.qin img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: -.35rem;*/
+    /*left: 13rem;*/
+/*}*/
+/*.qin p{*/
+    /*position: absolute;*/
+    /*top: 2%;*/
+    /*left: 80%;*/
+/*}*/
+/*.qin span{*/
+    /*position: absolute;*/
+    /*top: 22%;*/
+    /*left: 73%;*/
+/*}*/
+
+.top{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+.onclack{
+    display: flex;
+    flex-direction: column;
     width: 8.5%;
-    position: absolute;
-    top: -.35rem;
-    left: 3.9rem;
+    margin-right: 10.5%;
+    margin-top: -1.5%;
 }
-.shang p{
-    position: absolute;
-    top: 2%;
-    left: 26%;
+
+.onclack img{
+    width: 100%;
+
 }
-.shang span{
-    position: absolute;
-    top: 22%;
-    left: 18%;
+.onclack p{
+    margin-top: -.9rem;
+    margin-left: .5rem;
 }
-/*西周*/
-.xizhou img{
+.middle{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0rem;
+}
+
+.middleonclack{
+    display: flex;
+    flex-direction: column;
     width: 8.5%;
-    position: absolute;
-    top: -.35rem;
-    left: 6.9rem;
+    margin-right: 9%;
+    margin-top: 3%;
 }
-.xizhou p{
-    position: absolute;
-    top: 2%;
-    left: 42.5%;
+
+.middleonclack img{
+    width: 100%;
+
 }
-.xizhou span{
-    position: absolute;
-    top: 22%;
-    left: 37%;
+.middleonclack p{
+    margin-top: -.9rem;
+    margin-left: .5rem;
 }
-/*东周*/
-.dongzhou img{
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+.bottomonclack{
+    display: flex;
+    flex-direction: column;
     width: 8.5%;
-    position: absolute;
-    top: -.35rem;
-    left: 9.95rem;
+    margin-right: 10.5%;
+    margin-top: 3.2%;
 }
-.dongzhou p{
-    position: absolute;
-    top: 2%;
-    left: 60.5%;
+ .bottom .wdsg span{
+    margin-top: 0.3rem;
 }
-.dongzhou span{
-    position: absolute;
-    top: 22%;
-    left: 55.5%;
+
+.bottomonclack img{
+    width: 100%;
+
 }
-/*秦*/
-.qin img{
-    width: 8.5%;
-    position: absolute;
-    top: -.35rem;
-    left: 13rem;
+.bottomonclack p{
+    margin-top: -.9rem;
+    margin-left: .5rem;
 }
-.qin p{
-    position: absolute;
-    top: 2%;
-    left: 80%;
+
+.middleonclack span{
+    display: block;
+    width: 5.1rem;
+    margin-left: -1rem;
+    margin-top: .6rem;
 }
-.qin span{
-    position: absolute;
-    top: 22%;
-    left: 73%;
+.onclack span{
+    display: block;
+    width: 5.1rem;
+    margin-left: -1rem;
+    margin-top: .6rem;
 }
-/*汉*/
-.han img{
-    width: 8.5%;
-    position: absolute;
-    top: 37%;
-    left: 85%;
+.bottomonclack span{
+    display: block;
+    width: 5.1rem;
+    margin-left: -1rem;
+    margin-top: .6rem;
 }
-.han p{
-    position: absolute;
-    top: 45%;
-    left: 88%;
+
+.bottomonclack p{
+    margin-top: -.9rem;
+    margin-left: .5rem;
 }
-.han span{
-    position: absolute;
-    top: 64%;
-    left: 79%;
+.top .twotext{
+    margin-left: .3rem;
 }
-/*三国*/
-.sanguo img{
-    width: 8.5%;
-    position: absolute;
-    top: 37%;
-    left: 67%;
-}
-.sanguo p{
-    position: absolute;
-    top: 45%;
-    left: 68.5%;
-}
-.sanguo span{
-    position: absolute;
-    top: 64%;
-    left: 64%;
-}
-/*晋*/
-.jin img{
-    width: 8.5%;
-    position: absolute;
-    top: 37%;
-    left: 48%;
-}
-.jin p{
-    position: absolute;
-    top: 45%;
-    left: 51%;
-}
-.jin span{
-    position: absolute;
-    top: 64%;
-    left: 45%;
-}
-/*南北朝*/
-.nanbeichao img{
-    width: 8.5%;
-    position: absolute;
-    top: 37%;
-    left: 30%;
+.middleonclack .twotext{
+    margin-left: .3rem;
 }
 .nanbeichao p{
-    position: absolute;
-    top: 45%;
-    left: 30.5%;
-}
-.nanbeichao span{
-    position: absolute;
-    top: 64%;
-    left: 27%;
-}
-/*隋*/
-.sui img{
-    width: 8.5%;
-    position: absolute;
-    top: 37%;
-    left: 13%;
-}
-.sui p{
-    position: absolute;
-    top: 45%;
-    left: 16%;
-}
-.sui span{
-    position: absolute;
-    top: 64%;
-    left: 10%;
-}
-/*唐*/
-.tang img{
-    width: 8.5%;
-    position: absolute;
-    top: 79%;
-    left: 7%;
-}
-.tang p{
-    position: absolute;
-    top: 87%;
-    left: 10%;
-}
-.tang span{
-    position: absolute;
-    top: 106%;
-    left: 4%;
-}
-/*五代十国*/
-.wdsg img{
-    width: 8.5%;
-    position: absolute;
-    top: 79%;
-    left: 25%;
+    margin-top: -1.1rem;
+    margin-left: .3rem;
 }
 .wdsg p{
-    width: 6.5%;
-    position: absolute;
-    top: 84%;
-    left: 26.5%;
-}
-.wdsg span{
-    position: absolute;
-    top: 106%;
-    left: 22%;
-}
-/*宋*/
-.song img{
-    width: 8.5%;
-    position: absolute;
-    top: 79%;
-    left: 43%;
-}
-.song p{
-    position: absolute;
-    top: 87%;
-    left: 46%;
-}
-.song span{
-    position: absolute;
-    top: 106%;
-    left: 39%;
-}
-/*元*/
-.yuan img{
-    width: 8.5%;
-    position: absolute;
-    top: 79%;
-    left: 61%;
-}
-.yuan p{
-    position: absolute;
-    top: 87%;
-    left: 64%;
-}
-.yuan span{
-    position: absolute;
-    top: 106%;
-    left: 56%;
-}
-/*明*/
-.ming img{
-    width: 8.5%;
-    position: absolute;
-    top: 79%;
-    left: 79%;
-}
-.ming p{
-    position: absolute;
-    top: 87%;
-    left: 82%;
-}
-.ming span{
-    position: absolute;
-    top: 106%;
-    left: 74%;
+    margin-top: -1rem;
+    margin-left: .25rem;
 }
 
 
-/*清朝*/
-.rstars img{
-    width: 8.5%;
-    position: absolute;
-    bottom: -37%;
-    right: 8%;
-    transform: rotate(5deg);
-}
-.rstars p{
-    position: absolute;
-    bottom: -31%;
-    right: 10.7%;
-}
-.rstars span{
-    position: absolute;
-    bottom: -31%;
-    right: 12%;
-}
 /*左箭头*/
 .larrow{
     width: 8%;
@@ -460,14 +380,296 @@ body{
 }
 
 
-@media only screen and (device-width: 375px) and (device-height: 812px) and
-/*@media only screen and (device-width: 812px) and (device-height: 375px) and*/
+/*@media only screen and (device-width: 375px) and (device-height: 812px) and*/
+    @media only screen and (device-width: 812px) and (device-height: 375px) and
 (-webkit-device-pixel-ratio: 3){
-    #dv{
-        height: 8.31rem;
-    }
-    .backimg{
-        height:8.31rem
+   .middleonclack{
+    margin-top: 0;
+   }
+    .bottomonclack{
+        margin-top: 0;
     }
 }
+
+/*@media only screen and (device-width: 568px) and (device-height: 320px) and*/
+@media only screen and (device-width: 320px) and (device-height: 568px) and
+(-webkit-device-pixel-ratio: 2){
+    .middle{
+        display: flex;
+        flex-direction: row;
+        margin-left: 1rem;
+    }
+
+    .middleonclack{
+        display: flex;
+        flex-direction: column;
+        width: 8.5%;
+        margin-right: 9.25%;
+        margin-top: .6rem;
+    }
+
+    .middleonclack img{
+        width: 100%;
+
+    }
+    .middleonclack p{
+        margin-top: -.9rem;
+        margin-left: .5rem;
+    }
+    .middleonclack span{
+        display: block;
+        width: 5.1rem;
+        margin-left: -1rem;
+        margin-top: .6rem;
+    }
+    .onclack span{
+        display: block;
+        width: 5.1rem;
+        margin-left: -1rem;
+        margin-top: .6rem;
+    }
+    .bottomonclack span{
+        display: block;
+        width: 5.1rem;
+        margin-left: -1rem;
+        margin-top: .6rem;
+    }
+
+    .bottom{
+        display: flex;
+        flex-direction: row;
+        margin-left: 1.2rem;
+    }
+
+    .bottomonclack{
+        display: flex;
+        flex-direction: column;
+        width: 8.5%;
+        margin-right: 11%;
+        margin-top: .35rem;
+    }
+
+    .bottomonclack img{
+        width: 100%;
+
+    }
+    .bottomonclack p{
+        margin-top: -.9rem;
+        margin-left: .5rem;
+    }
+    .top .twotext{
+        margin-left: .3rem;
+    }
+    .middleonclack .twotext{
+        margin-left: .3rem;
+    }
+    .nanbeichao p{
+        margin-top: -1.1rem;
+        margin-left: .3rem;
+    }
+    .wdsg p{
+        margin-top: -1rem;
+        margin-left: .25rem;
+    }
+}
+
+
+
+
+
+/*!*汉*!*/
+/*.han img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 37%;*/
+    /*left: 85%;*/
+/*}*/
+/*.han p{*/
+    /*position: absolute;*/
+    /*top: 45%;*/
+    /*left: 88%;*/
+/*}*/
+/*.han span{*/
+    /*position: absolute;*/
+    /*top: 64%;*/
+    /*left: 79%;*/
+/*}*/
+/*!*三国*!*/
+/*.sanguo img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 37%;*/
+    /*left: 67%;*/
+/*}*/
+/*.sanguo p{*/
+    /*position: absolute;*/
+    /*top: 45%;*/
+    /*left: 68.5%;*/
+/*}*/
+/*.sanguo span{*/
+    /*position: absolute;*/
+    /*top: 64%;*/
+    /*left: 64%;*/
+/*}*/
+/*!*晋*!*/
+/*.jin img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 37%;*/
+    /*left: 48%;*/
+/*}*/
+/*.jin p{*/
+    /*position: absolute;*/
+    /*top: 45%;*/
+    /*left: 51%;*/
+/*}*/
+/*.jin span{*/
+    /*position: absolute;*/
+    /*top: 64%;*/
+    /*left: 45%;*/
+/*}*/
+/*!*南北朝*!*/
+/*.nanbeichao img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 37%;*/
+    /*left: 30%;*/
+/*}*/
+/*.nanbeichao p{*/
+    /*position: absolute;*/
+    /*top: 45%;*/
+    /*left: 30.5%;*/
+/*}*/
+/*.nanbeichao span{*/
+    /*position: absolute;*/
+    /*top: 64%;*/
+    /*left: 27%;*/
+/*}*/
+/*!*隋*!*/
+/*.sui img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 37%;*/
+    /*left: 13%;*/
+/*}*/
+/*.sui p{*/
+    /*position: absolute;*/
+    /*top: 45%;*/
+    /*left: 16%;*/
+/*}*/
+/*.sui span{*/
+    /*position: absolute;*/
+    /*top: 64%;*/
+    /*left: 10%;*/
+/*}*/
+
+
+/*!*唐*!*/
+/*.tang img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 79%;*/
+    /*left: 7%;*/
+/*}*/
+/*.tang p{*/
+    /*position: absolute;*/
+    /*top: 87%;*/
+    /*left: 10%;*/
+/*}*/
+/*.tang span{*/
+    /*position: absolute;*/
+    /*top: 106%;*/
+    /*left: 4%;*/
+/*}*/
+/*!*五代十国*!*/
+/*.wdsg img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 79%;*/
+    /*left: 25%;*/
+/*}*/
+/*.wdsg p{*/
+    /*width: 6.5%;*/
+    /*position: absolute;*/
+    /*top: 84%;*/
+    /*left: 26.5%;*/
+/*}*/
+/*.wdsg span{*/
+    /*position: absolute;*/
+    /*top: 106%;*/
+    /*left: 22%;*/
+/*}*/
+/*!*宋*!*/
+/*.song img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 79%;*/
+    /*left: 43%;*/
+/*}*/
+/*.song p{*/
+    /*position: absolute;*/
+    /*top: 87%;*/
+    /*left: 46%;*/
+/*}*/
+/*.song span{*/
+    /*position: absolute;*/
+    /*top: 106%;*/
+    /*left: 39%;*/
+/*}*/
+/*!*元*!*/
+/*.yuan img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 79%;*/
+    /*left: 61%;*/
+/*}*/
+/*.yuan p{*/
+    /*position: absolute;*/
+    /*top: 87%;*/
+    /*left: 64%;*/
+/*}*/
+/*.yuan span{*/
+    /*position: absolute;*/
+    /*top: 106%;*/
+    /*left: 56%;*/
+/*}*/
+/*!*明*!*/
+/*.ming img{*/
+    /*width: 8.5%;*/
+    /*position: absolute;*/
+    /*top: 79%;*/
+    /*left: 79%;*/
+/*}*/
+/*.ming p{*/
+    /*position: absolute;*/
+    /*top: 87%;*/
+    /*left: 82%;*/
+/*}*/
+/*.ming span{*/
+    /*position: absolute;*/
+    /*top: 106%;*/
+    /*left: 74%;*/
+/*}*/
+
+
+/*清朝*/
+.rstars img{
+    width: 8.5%;
+    position: absolute;
+    bottom: -37%;
+    right: 8%;
+    transform: rotate(5deg);
+}
+.rstars p{
+    position: absolute;
+    bottom: -31%;
+    right: 10.7%;
+}
+.rstars span{
+    position: absolute;
+    bottom: -31%;
+    right: 5%;
+}
+
+
 

@@ -135,7 +135,7 @@ var dynastyId = GetQueryString("dynastyId");
 
 
 /*点击按钮播放音频*/
-$('.audio').click(function(){
+$('.audio').on( 'touchstart',function(){
 
     index = SwiperList.realIndex
     index1 = index+1

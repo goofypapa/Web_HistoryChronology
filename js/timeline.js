@@ -42,12 +42,24 @@ $.ajax({
         for(let i=0;i<datas.length;i++){
             var pObj = document.querySelectorAll('.track p');
             let datasA = datas[i];
-            $('.onclack p').click(function () {
+            $('.onclick p').on( 'touchstart',function () {
+                console.log($('.onclick').find('p').text())
                 if(datasA.dynastyName == this.innerText){
                     window.location.href="details.html?dynastyId="+datasA.dynastyId+"&&index="+datasA['dynastyAddr'];
                 }else{
                     return false;
                 }
+            })
+
+            $('.onclick').on('touchstart' ,function () {
+                console.log($(this).find('p')[0].innerText)
+
+                if(datasA.dynastyName == $(this).find('p')[0].innerText){
+                    window.location.href="details.html?dynastyId="+datasA.dynastyId+"&&index="+datasA['dynastyAddr'];
+                }else{
+                    return false;
+                }
+
             })
         }
     }

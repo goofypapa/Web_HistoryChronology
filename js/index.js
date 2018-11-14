@@ -65,7 +65,7 @@ $('.progress .img3').on('touchend',function () {
 });
 
 //调用Android的退出app
-$('.back').click(function(){
+$('.back').on('touchstart',function(){
     if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
         window.location.href='goofypapa://back';
     }else{
