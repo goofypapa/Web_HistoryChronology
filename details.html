@@ -19,9 +19,10 @@
         }
         .loadgif{
             width: 1.2rem;
-            position: fixed;
-            top: 4.25rem;
-            left: 8.5rem;
+            height: 1.2rem;
+            /*position: fixed;*/
+            margin-top: 4.25rem;
+            /*left: 8.5rem;*/
             -webkit-transform: translateZ(0);
         }
         @media only screen and (device-width: 375px) and (device-height: 812px) and
@@ -38,9 +39,14 @@
 </head>
 <body style="height: 100%">
 <div id="loadingDiv" style="display: flex;background: url(image/background.png);background-size: cover" class="loader">
-    <div></div>
-    <img class="loadgif" src="./image/load.gif" alt="">
-    <div></div>
+    <div style="width: 49%"></div>
+    <div style="display: flex;flex-direction: column;">
+        <div></div>
+        <div>
+          <img class="loadgif" src="./image/load.gif" alt="">
+        </div>
+    </div>
+    <div style="width: 49%"></div>
 </div>
     <img src="image/backgr.png" style="display: none" alt="">
     <img src="image/suidao1.png" style="display: none" alt="">
@@ -74,6 +80,16 @@
         <img src="image/boy.gif">
     </div>
 </div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/common.js"></script>
+<script src="js/swiper-4.3.3.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+
+<script src="js/details.js"></script>
+
 <script>
     document.onreadystatechange = completeLoading;
 
@@ -86,15 +102,6 @@
         }
     }
 </script>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.cookie.js"></script>
-<script src="js/common.js"></script>
-<script src="js/swiper-4.3.3.min.js"></script>
-<script src="js/swiper.animate.min.js"></script>
-
-<script src="js/details.js"></script>
-
 
 <div id="template1" style="display: none">
     <div class="swiper-slide">
