@@ -21,28 +21,18 @@
             width: 1.2rem;
             height: 1.2rem;
             /*position: fixed;*/
-            margin-top: 4.25rem;
             /*left: 8.5rem;*/
             -webkit-transform: translateZ(0);
         }
-        @media only screen and (device-width: 375px) and (device-height: 812px) and
-            /*@media only screen and (device-width: 812px) and (device-height: 375px) and*/
-        (-webkit-device-pixel-ratio: 3){
-            .loadgif{
-                width: 1.2rem;
-                margin-top: 3.45rem;
-                margin-left: 8.5rem;
-                -webkit-transform: translateZ(0);
-            }
-        }
+
     </style>
 </head>
 <body style="height: 100%">
 <div id="loadingDiv" style="display: flex;background: url(image/background.png);background-size: cover" class="loader">
     <div style="width: 49%"></div>
     <div style="display: flex;flex-direction: column;">
-        <div></div>
-        <div>
+        <div style="height: 45%"></div>
+        <div style="display: flex;justify-content: start">
           <img class="loadgif" src="./image/load.gif" alt="">
         </div>
     </div>
