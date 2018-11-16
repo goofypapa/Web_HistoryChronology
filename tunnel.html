@@ -38,15 +38,15 @@
     </div>
     <!--返回首页-->
     <div class="back">
-        <a href="index.html">
+
             <img src="image/back.png">
-        </a>  
+
     </div>
     <!--时间轴按钮-->
     <div class="timeline">
-        <a href="timeline.html">
+
             <img src="image/timeline.png">
-        </a>
+
     </div>
 
     <!-- 流星 -->
@@ -59,7 +59,15 @@
 <script src="js/common.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/tunnel.js"></script>
+<script>
+    $('.back').on('touchstart',function () {
+        window.location.href = 'index.html'
+    })
+    $('.timeline').on('touchstart',function () {
+        window.location.href = 'timeline.html'
+    })
 
+</script>
 
 </body>
 </html>

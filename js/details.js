@@ -1,5 +1,5 @@
 /*点击返回时空隧道页*/
-$('.back2').click(function(){
+$('.back2').on('touchstart',function(){
     // window.location.href="tunnel.html";
     // window.android.log('返回')
     window.history.go(-1)
