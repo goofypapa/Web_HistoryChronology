@@ -12,14 +12,17 @@
     <link rel="stylesheet" href="css/animate.min.css" type="text/css" />
     <link rel="stylesheet" href="css/swiper-4.3.3-1.min.css" type="text/css" />  <!--改过的文件-->
     <style>
+        html, body {height:100%;overflow:auto;margin: 0;}
         .loader {
             /*position: fixed;  left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;  background: url('./img/load.gif') 50% 50% no-repeat rgb(249, 249, 249);*/
             position: fixed;  left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;
         }
         .loadgif{
             width: 1.2rem;
-            margin-top: 4.25rem;
-            margin-left: 8.5rem
+            position: fixed;
+            top: 4.25rem;
+            left: 8.5rem;
+            -webkit-transform: translateZ(0);
         }
         @media only screen and (device-width: 375px) and (device-height: 812px) and
             /*@media only screen and (device-width: 812px) and (device-height: 375px) and*/
@@ -27,14 +30,17 @@
             .loadgif{
                 width: 1.2rem;
                 margin-top: 3.45rem;
-                margin-left: 8.5rem
+                margin-left: 8.5rem;
+                -webkit-transform: translateZ(0);
             }
         }
     </style>
 </head>
 <body style="height: 100%">
-<div id="loadingDiv" style="background: url(image/background.png);background-size: cover" class="loader">
+<div id="loadingDiv" style="display: flex;background: url(image/background.png);background-size: cover" class="loader">
+    <div></div>
     <img class="loadgif" src="./image/load.gif" alt="">
+    <div></div>
 </div>
     <img src="image/backgr.png" style="display: none" alt="">
     <img src="image/suidao1.png" style="display: none" alt="">
