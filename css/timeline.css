@@ -380,8 +380,8 @@ body{
 }
 
 
-/*@media only screen and (device-width: 375px) and (device-height: 812px) and*/
-    @media only screen and (device-width: 812px) and (device-height: 375px) and
+@media only screen and (device-width: 375px) and (device-height: 812px) and
+    /*@media only screen and (device-width: 812px) and (device-height: 375px) and*/
 (-webkit-device-pixel-ratio: 3){
    .middleonclack{
     margin-top: 0;

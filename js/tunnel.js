@@ -9,6 +9,10 @@ document.querySelector('.chaoDai').style.height = docuHeight + 'px';
 document.querySelector('.chaoDai').style.width = docuWidth + 'px';
 
 
+document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+},false);
+
 //js获取url参数
 function GetQueryString(name){
     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");

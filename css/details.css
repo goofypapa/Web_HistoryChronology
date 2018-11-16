@@ -141,6 +141,7 @@
 }
 #swiper-container2 .swiper-slide{
     height: auto;
+    -webkit-tap-highlight-color:transparent;
 }
 .contentP{
     font-size: 0.3rem;

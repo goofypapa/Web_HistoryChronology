@@ -16,10 +16,26 @@
             /*position: fixed;  left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;  background: url('./img/load.gif') 50% 50% no-repeat rgb(249, 249, 249);*/
             position: fixed;  left: 0px;  top: 0px;  width: 100%;  height: 100%;  z-index: 9999;
         }
+        .loadgif{
+            width: 1.2rem;
+            margin-top: 4.25rem;
+            margin-left: 8.5rem
+        }
+        @media only screen and (device-width: 375px) and (device-height: 812px) and
+            /*@media only screen and (device-width: 812px) and (device-height: 375px) and*/
+        (-webkit-device-pixel-ratio: 3){
+            .loadgif{
+                width: 1.2rem;
+                margin-top: 3.45rem;
+                margin-left: 8.5rem
+            }
+        }
     </style>
 </head>
 <body style="height: 100%">
-<div id="loadingDiv" style="background: url(image/background.png);background-size: cover" class="loader"></div>
+<div id="loadingDiv" style="background: url(image/background.png);background-size: cover" class="loader">
+    <img class="loadgif" src="./image/load.gif" alt="">
+</div>
     <img src="image/backgr.png" style="display: none" alt="">
     <img src="image/suidao1.png" style="display: none" alt="">
     <img src="image/mtxing.png" style="display: none" alt="">
@@ -52,6 +68,19 @@
         <img src="image/boy.gif">
     </div>
 </div>
+<script>
+    document.onreadystatechange = completeLoading;
+
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState == "complete") {
+            console.log("jiazaiwancheng")
+            var loadingMask = document.getElementById('loadingDiv');
+            loadingMask.parentNode.removeChild(loadingMask);
+        }
+    }
+</script>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
 <script src="js/common.js"></script>
@@ -79,17 +108,5 @@
     </div>
 </div>
 
-<script>
-    document.onreadystatechange = completeLoading;
-
-    //加载状态为complete时移除loading效果
-    function completeLoading() {
-        if (document.readyState == "complete") {
-            console.log("jiazaiwancheng")
-            var loadingMask = document.getElementById('loadingDiv');
-            loadingMask.parentNode.removeChild(loadingMask);
-        }
-    }
-</script>
 </body>
 </html>

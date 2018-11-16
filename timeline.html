@@ -17,12 +17,13 @@
 </head>
 <body>
 
-<div id="loadingDiv" style="background: url(image/background.png);background-size: cover" class="loader"></div>
-<img src="image/backgr.png" style="display: none" alt="">
+<div id="loadingDiv" style="background: url(image/background.png);background-size: cover" class="loader">
+    <!--<img style="width: 1.2rem;margin-top: 4.25rem;margin-left: 8.5rem" src="./image/load.gif" alt="">-->
+</div>
+    <img src="image/backgr.png" style="display: none" alt="">
     <img src="image/suidao1.png" style="display: none" alt="">
     <img src="image/mtxing.png" style="display: none" alt="">
     <img src="image/flashing.png" style="display: none" alt="">
-    <img src="image/background.png" style="display: none" alt="">
 <div id="dv" style="overflow: hidden;width: 100%">
     
     <img class='backimg' src="image/background.png" style="position: relative;z-index: -1;width: 100%;" alt="">
@@ -158,21 +159,21 @@
     <!--音频-->
 </div>
 
+<script>
+    document.onreadystatechange = completeLoading;
 
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState == "complete") {
+            console.log("jiazaiwancheng")
+            var loadingMask = document.getElementById('loadingDiv');
+            loadingMask.parentNode.removeChild(loadingMask);
+        }
+    }
+</script>
 <script src="js/jquery.min.js"></script>
 <script src="js/common.js"></script>
 <script src="js/timeline.js"></script>
-    <script>
-        document.onreadystatechange = completeLoading;
 
-        //加载状态为complete时移除loading效果
-        function completeLoading() {
-            if (document.readyState == "complete") {
-                console.log("jiazaiwancheng")
-                var loadingMask = document.getElementById('loadingDiv');
-                loadingMask.parentNode.removeChild(loadingMask);
-            }
-        }
-    </script>
 </body>
 </html>
