@@ -47,3 +47,21 @@ function audioPause() {
     window.android.log('执行了')
 }
 // window.android.setScreenOrientation(1)
+
+
+function back() {
+    //ios ws
+    if(typeof(goofyPapa_back) === "function"){
+        goofyPapa_back();
+        return;
+    }
+    //android ws
+    if( typeof(goofyPapa) !== "undefined" ){
+        goofyPapa.back();
+        return;
+    }
+    if(history.length) {
+        history.go(-1);
+        return;
+    }
+}

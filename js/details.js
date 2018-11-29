@@ -1,9 +1,12 @@
 /*点击返回时空隧道页*/
-$('.back2').on('touchstart',function(){
-    // window.location.href="tunnel.html";
-    // window.android.log('返回')
-    window.history.go(-1)
-});
+// $('.back2').on('touchstart',function(){
+//     // window.location.href="tunnel.html";
+//     // window.android.log('返回')
+//     window.history.go(-1)
+// });
+
+
+
 
 /*3秒后将上下提示箭头隐藏*/
 setTimeout(function(){
