@@ -51,8 +51,8 @@ function audioPause() {
 
 function back() {
     //ios ws
-    if(typeof(goofyPapa_back) === "function"){
-        goofyPapa_back();
+    if(typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+        window.location.href='goofypapa://back';
         return;
     }
     //android ws
@@ -60,6 +60,7 @@ function back() {
         goofyPapa.back();
         return;
     }
+
     if(history.length) {
         history.go(-1);
         return;

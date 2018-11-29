@@ -69,12 +69,19 @@ var dynastyid_ = [
 
 var dynastyIdI
 
-for(var u = 0;u++ ; u<appId.length){
-    if(dynastyId ==appId[u]){
-        dynastyIdI = dynastyid_[u]
+
+if(typeof(resourceId) === "string"){
+    for(var u = 0;u<appId.length ;u++  ){
+        if(resourceId ==appId[u]){
+            dynastyIdI = dynastyid_[u]
+        }
     }
+}
+
+if( typeof(resourceId) === "undefined" ){
     dynastyIdI = dynastyId
 }
+
 
 
     var index
