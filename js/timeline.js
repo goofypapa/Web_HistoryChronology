@@ -45,7 +45,7 @@ $.ajax({
             $('.onclick p').on( 'touchstart',function () {
                 console.log($('.onclick').find('p').text())
                 if(datasA.dynastyName == this.innerText){
-                    window.location.href="details.html?dynastyId="+datasA.dynastyId+"&&index="+datasA['dynastyAddr'];
+                    window.location.href="details.html?resourceId="+datasA.dynastyId+"&&index="+datasA['dynastyAddr'];
                 }else{
                     return false;
                 }
@@ -55,7 +55,7 @@ $.ajax({
                 console.log($(this).find('p')[0].innerText)
 
                 if(datasA.dynastyName == $(this).find('p')[0].innerText){
-                    window.location.href="details.html?dynastyId="+datasA.dynastyId+"&&index="+datasA['dynastyAddr'];
+                    window.location.href="details.html?resourceId="+datasA.dynastyId+"&&index="+datasA['dynastyAddr'];
                 }else{
                     return false;
                 }

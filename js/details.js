@@ -18,59 +18,61 @@ function GetQueryString(name){
     var r = window.location.search.substr(1).match(reg);
     if(r!=null)return  unescape(r[2]); return null;
 }
-var dynastyId = GetQueryString("dynastyId");
+var dynastyId = GetQueryString("resourceId");
 
 
+var appId = [
+    "ef0511e8b1821d55f6b759e67d2ee3ec",
+    "ef0511e8b1821d55f6b759e6e56d239d",
+    "ef0511e8b1821d55f6b759e6fa34334e",
+    "ef0611e8b1821d55f6b759e6b791fbdb",
+    "ef8311e8b1821d55f6b759e6925d6adf",
+    "ef8311e8b1821d55f6b759e6abb99310",
+    "ef8311e8b1821d55f6b759e6c28af1b1",
+    "ef8311e8b1821d55f6b759e6ef225972",
+    "ef8411e8b1821d55f6b759e60430f973",
+    "ef8411e8b1821d55f6b759e6244da5a4",
+    "ef8411e8b1821d55f6b759e63d26bb25",
+    "ef8411e8b1821d55f6b759e64cc747c6",
+    "ef8411e8b1821d55f6b759e683479ca7",
+    "ef8411e8b1821d55f6b759e6955dbd28",
+    "ef8411e8b1821d55f6b759e6c4577ee9",
+    "ef8411e8b1821d55f6b759e6d5864caa",
+    "ef8411e8b1821d55f6b759e6e7fe3c3b"
 
-    // $.ajax({
-    //     type: "post",
-    //     url: "http://www.dadpat.com/dynasty/getAllList.do",
-    //     dataType: "jsonp", //以键/值对的形式
-    //     async: true,
-    //     success: function (data) {
-    //         // console.log(data.data);
-    //         window.localStorage.setItem('mainData',JSON.stringify(data.data))
-    //
-    //         for( var i = 0; i < data.data.length; ++i )
-    //         {
-    //             var dyId1 = data.data[i].dynastyId;
-    //             dataList.push([dyId1])
-    //
-    //             $.ajax({
-    //                 type: "post",
-    //                 url: "http://www.dadpat.com/dynastyInfo/getAllList.do",
-    //                 dataType: "jsonp", //以键/值对的形式
-    //                 async: true,
-    //                 data: {"dynastyId": dyId1},
-    //                 success: function (data) {
-    //                     var chaodaiData = data.data;  //拿到各个朝代的data
-    //
-    //                     var isOver = true;
-    //                     for( var i = 0; i < dataList.length; ++i )
-    //                     {
-    //                         if( chaodaiData[0].dynastyId === dataList[i][0] )
-    //                         {
-    //                             dataList[i].push(chaodaiData);
-    //                         }
-    //                         if( isOver && dataList[i].length === 1 )
-    //                         {
-    //                             isOver = false;
-    //                         }
-    //                     }
-    //
-    //                     if( isOver )
-    //                     {
-    //                         time += "," + (new Date().getTime());
-    //                         // alert(time);
-    //                         console.log( dataList );
-    //
-    //                         window.localStorage.setItem('dataList',JSON.stringify(dataList))
-    //                     }
-    //                 }
-    //             });
-    //         }
-    //     }
-    // });
+]
+
+var dynastyid_ = [
+    "8e5211e89b32df04b89855faa46f9ac1",
+    "b65611e8b154b32f29a5eb7ae6266a6f",
+    "b65911e8b154b32f29a5eb7af2192a4a",
+    "b66511e8b154b32f29a5eb7ae771b1d2",
+    "b65b11e8b154b32f29a5eb7aab772011",
+    "8e5211e89b32df04b89855faab8f7cd2",
+    "b66611e8b154b32f29a5eb7a469e50a1",
+    "b65711e8b154b32f29a5eb7a996ce2e7",
+    "8e3611e89b32df04b89855fac4fa5b98",
+    "b66411e8b154b32f29a5eb7af75297f5",
+    "b66311e8b154b32f29a5eb7a4e6269b5",
+    "b66311e8b154b32f29a5eb7abf72a852",
+    "b66411e8b154b32f29a5eb7a6b1e696b",
+    "8e1411e8b9a391c63513b9a0cb8d3852",
+    "8e5211e89b32df04b89855fa9e6b88f0",
+    "b66511e8b154b32f29a5eb7a68338936",
+    "8b4711e88f3ac33d823a3b765286932e"
+
+
+]
+
+var dynastyIdI
+
+for(var u = 0;u++ ; u<appId.length){
+    if(dynastyId ==appId[u]){
+        dynastyIdI = dynastyid_[u]
+    }
+    dynastyIdI = dynastyId
+}
+
 
     var index
     var index1
@@ -103,7 +105,7 @@ var dynastyId = GetQueryString("dynastyId");
         url: "http://www.dadpat.com/dynastyInfo/getAllList.do",
         dataType: "jsonp", //以键/值对的形式
         async: true,
-        data:{"dynastyId": dynastyId },
+        data:{"dynastyId": dynastyIdI },
         success: function (data) {
             var chaodaiData = data.data;  //拿到各个朝代的data
 
