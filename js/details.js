@@ -67,15 +67,13 @@ var dynastyid_ = [
 
 ]
 
-var dynastyIdI
+var dynastyIdI = dynastyId
 
 
 
 for(var u = 0;u<appId.length ;u++  ){
     if(dynastyId ==appId[u]){
         dynastyIdI = dynastyid_[u]
-    }else{
-        dynastyIdI = dynastyId
     }
 }
 
