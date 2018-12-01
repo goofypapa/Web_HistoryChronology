@@ -76,7 +76,26 @@ for(var u = 0;u<appId.length ;u++  ){
         dynastyIdI = dynastyid_[u]
     }
 }
-
+function back() {
+    //ios ws
+    if(dynastyIdI != dynastyId){
+        if(typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+            window.location.href='goofypapa://back';
+            return;
+        }
+    }
+    
+    //android ws
+    if( typeof(goofyPapa) !== "undefined" ){
+        goofyPapa.back();
+        return;
+    }
+    
+    if(history.length) {
+        history.go(-1);
+        return;
+    }
+}
 
 
     var index
