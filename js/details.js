@@ -78,9 +78,10 @@ for(var u = 0;u<appId.length ;u++  ){
 }
 function back() {
     //ios ws
+
     if(dynastyIdI != dynastyId){
         if(typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
-            window.location.href='goofypapa://back';
+            window.location.href='goofypapa://back;stopAllAudio';
             return;
         }
     }
@@ -115,7 +116,17 @@ function back() {
             slideChange: function () {
                 // document.querySelectorAll('.audioplay').pause()
                 // $(".audioplay").pause()
-                $(".swiper-slide").find(".audioplay")[index].pause()
+                if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+                    goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
+                    } );
+                }else if( typeof( window.android ) != "undefined" ) {
+                    window.android.initMusic($('.swiper-slide-active input')[0].value);
+                    window.android.startMusic();
+                }else{
+                    console.log(" p_url ");
+                }
+
+                // $(".swiper-slide").find(".audioplay")[index].pause()
             },
             // slideChangeTransitionEnd:function () {
             //     $(".swiper-slide").find(".audioplay")[index1].play()
@@ -124,60 +135,112 @@ function back() {
         }
     });
 
-    $.ajax({
-        type: "post",
-        url: "http://www.dadpat.com/dynastyInfo/getAllList.do",
-        dataType: "jsonp", //以键/值对的形式
-        async: true,
-        data:{"dynastyId": dynastyIdI },
-        success: function (data) {
-            var chaodaiData = data.data;  //拿到各个朝代的data
 
-            console.log(chaodaiData, 'chaodaiData')
+    var t_parameter3 = {};
+    t_parameter3.dynastyId = dynastyIdI;
+    goofypapaPost( "http://www.dadpat.com/dynastyInfo/getAllList.do", t_parameter3, function( p_res ){
+        // alert(JSON.stringify(p_res) +'在轮播时判断是否收藏')
+        var chaodaiData = p_res.data;  //拿到各个朝代的data
 
-            for( var j = 0; j < chaodaiData.length; ++j ){
-                var imgUrl = chaodaiData[j]["image"][0]["imageUrl"]
-                var content = chaodaiData[j]["dynastyDescp"].split(";")[0]
-                var audioUrl = chaodaiData[j]['audio'][0]['attUrl']
-                var chaodaiName = chaodaiData[j]['dynastyName']
-                var s = $("#template1").html().replace("$img$", "http://www.dadpat.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "http://www.dadpat.com/" + audioUrl)
-                $("#swiper1").append(s);
-            }
+        console.log(chaodaiData, 'chaodaiData')
 
-            // setTimeout(function () {
-            //     showAudio(dyId1)
-            // })
-
-            //p标签的滑动
-            swiperP = new Swiper('#swiper1 .swiper-container', {
-                direction: 'vertical',
-                slidesPerView: 'auto',
-                touchMoveStopPropagation : false,
-                freeMode: true,
-                mousewheel: true,
-            });
+        for( var j = 0; j < chaodaiData.length; ++j ){
+            var imgUrl = chaodaiData[j]["image"][0]["imageUrl"]
+            var content = chaodaiData[j]["dynastyDescp"].split(";")[0]
+            var audioUrl = chaodaiData[j]['audio'][0]['attUrl']
+            var chaodaiName = chaodaiData[j]['dynastyName']
+            var s = $("#template1").html().replace("$img$", "http://www.dadpat.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "http://www.dadpat.com/" + audioUrl)
+            $("#swiper1").append(s);
         }
-    });
+
+        // setTimeout(function () {
+        //     showAudio(dyId1)
+        // })
+
+        //p标签的滑动
+        swiperP = new Swiper('#swiper1 .swiper-container', {
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            touchMoveStopPropagation : false,
+            freeMode: true,
+            mousewheel: true,
+        });
+
+    }, function( p_res ){
+
+    } );
+
+
+    // $.ajax({
+    //     type: "post",
+    //     url: "http://www.dadpat.com/dynastyInfo/getAllList.do",
+    //     dataType: "jsonp", //以键/值对的形式
+    //     async: true,
+    //     data:{"dynastyId": dynastyIdI },
+    //     success: function (data) {
+    //         var chaodaiData = data.data;  //拿到各个朝代的data
+    //
+    //         console.log(chaodaiData, 'chaodaiData')
+    //
+    //         for( var j = 0; j < chaodaiData.length; ++j ){
+    //             var imgUrl = chaodaiData[j]["image"][0]["imageUrl"]
+    //             var content = chaodaiData[j]["dynastyDescp"].split(";")[0]
+    //             var audioUrl = chaodaiData[j]['audio'][0]['attUrl']
+    //             var chaodaiName = chaodaiData[j]['dynastyName']
+    //             var s = $("#template1").html().replace("$img$", "http://www.dadpat.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "http://www.dadpat.com/" + audioUrl)
+    //             $("#swiper1").append(s);
+    //         }
+    //
+    //         // setTimeout(function () {
+    //         //     showAudio(dyId1)
+    //         // })
+    //
+    //         //p标签的滑动
+    //         swiperP = new Swiper('#swiper1 .swiper-container', {
+    //             direction: 'vertical',
+    //             slidesPerView: 'auto',
+    //             touchMoveStopPropagation : false,
+    //             freeMode: true,
+    //             mousewheel: true,
+    //         });
+    //     }
+    // });
 
 
 /*点击按钮播放音频*/
 $('.audio').on( 'touchstart',function(){
+
+
+
 
     index = SwiperList.realIndex
     index1 = index+1
     console.log(isplay)
     if(!isplay){
 
-        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
+        if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+            goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
+            } );
+        }else if( typeof( window.android ) != "undefined" ) {
+            window.android.initMusic($('.swiper-slide-active input')[0].value);
+            window.android.startMusic();
+        }else{
+            console.log(" p_url ");
+        }
+
+        // $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
 
     }else{
 
-        $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
+        if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+            goofypapaStopAllAudio();
+        }else{
+            console.log(" p_url ");
+        }
+
+        // $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
     }
     isplay = !isplay
 });
-
-
-
 
 

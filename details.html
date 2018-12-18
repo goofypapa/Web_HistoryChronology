@@ -28,6 +28,8 @@
     </style>
 </head>
 <body style="height: 100%">
+
+<script src="js/goofypapaApi.js"></script>
 <div id="loadingDiv" style="display: flex;background: url(image/background.png);background-size: cover" class="loader">
     <div style="width: 49%"></div>
     <div style="display: flex;flex-direction: column;">
@@ -102,7 +104,7 @@
             <p class="contentP">$content$</p>
         </div>
         <!--音频-->
-        <audio class="audioplay" src="$audio$"></audio>
+        <input class="audioplay" type="hidden" value="$audio$"/>
         <!--朝代名称-->
         <div class="chaoDai">
             <p class="title">$chaodai$</p>

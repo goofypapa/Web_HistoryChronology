@@ -37,10 +37,12 @@ var docuWidth = document.documentElement.clientWidth;  //可见区域宽度
 var docuHeight = document.documentElement.clientHeight; //可见区域高度
  document.getElementById('dv1').style.height = docuHeight +'px';
  document.getElementById('dv1').style.width = docuWidth +'px';
- document.getElementById('dv').style.height = docuHeight +'px';
- document.getElementById('dv').style.width = docuWidth +'px';
+ document.getElementById('dv').style.height = window.screen.availHeight+'px';
+ document.getElementById('dv').style.width = window.screen.availWidth+'px';
  document.getElementById('loadingDiv').style.height = docuHeight +'px';
  document.getElementById('loadingDiv').style.width = docuWidth +'px';
+
+
 
 function audioPause() {
     document.querySelectorAll('audio').pause()

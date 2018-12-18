@@ -1,6 +1,9 @@
 /*朝代的霓虹灯效果*/
 // window.android.setScreenOrientation(1)
 // window.android.pauseMusic()
+
+
+
 var me = 0;
 var imgObj = document.querySelectorAll('.lamp img');
 var timer = setInterval(function(){
@@ -64,3 +67,8 @@ $.ajax({
         }
     }
 });
+
+
+if(typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+    goofypapaStopAllAudio();
+}
