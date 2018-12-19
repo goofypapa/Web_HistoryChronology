@@ -87,7 +87,7 @@
 
 /*朝代*/
 #dv{
-    height: 10.11rem;
+    /*height: 10.11rem;*/
 }
 .dynasty{
     height: 72%;
@@ -174,7 +174,7 @@
 }
 /*改swiper组件*/
 #swiper-container {
-    height: 96%;
+    height:96%;
     width: 98%;
     padding-top: 1%;
 }

@@ -33,12 +33,13 @@ onresize = function(){
 };
 
 /*每个页面最大的div的宽高*/
-var docuWidth = document.documentElement.clientWidth;  //可见区域宽度
-var docuHeight = document.documentElement.clientHeight; //可见区域高度
+var docuWidth = window.screen.availWidth;  //可见区域宽度
+var docuHeight = window.screen.availHeight; //可见区域高度
  document.getElementById('dv1').style.height = docuHeight +'px';
  document.getElementById('dv1').style.width = docuWidth +'px';
  document.getElementById('dv').style.height = window.screen.availHeight+'px';
  document.getElementById('dv').style.width = window.screen.availWidth+'px';
+ alert(document.getElementById('dv').style.width+"------------tianjaile");
  document.getElementById('loadingDiv').style.height = docuHeight +'px';
  document.getElementById('loadingDiv').style.width = docuWidth +'px';
 
