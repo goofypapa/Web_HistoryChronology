@@ -96,8 +96,13 @@
     }
 
     // console.log(window.screen.availHeight,window.screen.availWidth)
-    document.getElementById('dv').style.height = window.screen.availHeight+'px';
-    document.getElementById('dv').style.width = window.screen.availWidth+'px';
+    // document.getElementById('dv').style.height = window.screen.availHeight+'px';
+    // document.getElementById('dv').style.width = window.screen.availWidth+'px';
+    var docuWidth = document.documentElement.clientWidth;  //可见区域宽度
+    var docuHeight = document.documentElement.clientHeight; //可见区域高度
+    document.getElementById('dv').style.height = docuHeight +'px';
+    document.getElementById('dv').style.width = docuWidth +'px';
+
 </script>
 
 <div id="template1" style="display: none">

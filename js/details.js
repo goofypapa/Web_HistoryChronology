@@ -116,16 +116,20 @@ function back() {
             slideChange: function () {
                 // document.querySelectorAll('.audioplay').pause()
                 // $(".audioplay").pause()
-                isplay  = !isplay;
-                if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
-                    goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
-                    } );
-                }else if( typeof( window.android ) != "undefined" ) {
-                    window.android.initMusic($('.swiper-slide-active input')[0].value);
-                    window.android.startMusic();
-                }else{
-                    console.log(" p_url ");
-                }
+
+                // alert(isplay)
+                   if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+                       goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
+                       } );
+                   }else if( typeof( window.android ) != "undefined" ) {
+                       window.android.initMusic($('.swiper-slide-active input')[0].value);
+                       window.android.startMusic();
+                   }else{
+                       console.log(" p_url ");
+                   }
+                   isplay  = !isplay;
+
+
 
                 // $(".swiper-slide").find(".audioplay")[index].pause()
             },
@@ -273,7 +277,7 @@ $('.audio').on( 'touchstart',function(){
 
     index = SwiperList.realIndex
     index1 = index+1
-    console.log(isplay)
+    // alert(isplay)
     if(!isplay){
 
         if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
