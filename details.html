@@ -103,6 +103,89 @@
     document.getElementById('dv').style.height = docuHeight +'px';
     document.getElementById('dv').style.width = docuWidth +'px';
 
+
+
+    function GetQueryString(name){
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if(r!=null)return  unescape(r[2]); return null;
+    }
+    var dynastyId = GetQueryString("resourceId");
+
+
+    var appId = [
+        "ef0511e8b1821d55f6b759e67d2ee3ec",
+        "ef0511e8b1821d55f6b759e6e56d239d",
+        "ef0511e8b1821d55f6b759e6fa34334e",
+        "ef0611e8b1821d55f6b759e6b791fbdb",
+        "ef8311e8b1821d55f6b759e6925d6adf",
+        "ef8311e8b1821d55f6b759e6abb99310",
+        "ef8311e8b1821d55f6b759e6c28af1b1",
+        "ef8311e8b1821d55f6b759e6ef225972",
+        "ef8411e8b1821d55f6b759e60430f973",
+        "ef8411e8b1821d55f6b759e6244da5a4",
+        "ef8411e8b1821d55f6b759e63d26bb25",
+        "ef8411e8b1821d55f6b759e64cc747c6",
+        "ef8411e8b1821d55f6b759e683479ca7",
+        "ef8411e8b1821d55f6b759e6955dbd28",
+        "ef8411e8b1821d55f6b759e6c4577ee9",
+        "ef8411e8b1821d55f6b759e6d5864caa",
+        "ef8411e8b1821d55f6b759e6e7fe3c3b"
+
+    ]
+
+    var dynastyid_ = [
+        "8e5211e89b32df04b89855faa46f9ac1",
+        "b65611e8b154b32f29a5eb7ae6266a6f",
+        "b65911e8b154b32f29a5eb7af2192a4a",
+        "b66511e8b154b32f29a5eb7ae771b1d2",
+        "b65b11e8b154b32f29a5eb7aab772011",
+        "8e5211e89b32df04b89855faab8f7cd2",
+        "b66611e8b154b32f29a5eb7a469e50a1",
+        "b65711e8b154b32f29a5eb7a996ce2e7",
+        "8e3611e89b32df04b89855fac4fa5b98",
+        "b66411e8b154b32f29a5eb7af75297f5",
+        "b66311e8b154b32f29a5eb7a4e6269b5",
+        "b66311e8b154b32f29a5eb7abf72a852",
+        "b66411e8b154b32f29a5eb7a6b1e696b",
+        "8e1411e8b9a391c63513b9a0cb8d3852",
+        "8e5211e89b32df04b89855fa9e6b88f0",
+        "b66511e8b154b32f29a5eb7a68338936",
+        "8b4711e88f3ac33d823a3b765286932e"
+
+
+    ]
+
+    var dynastyIdI = dynastyId
+
+
+
+    for(var u = 0;u<appId.length ;u++  ){
+        if(dynastyId ==appId[u]){
+            dynastyIdI = dynastyid_[u]
+        }
+    }
+    function back() {
+        //ios ws
+
+        if(dynastyIdI != dynastyId){
+            if(typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+                window.location.href='goofypapa://back;stopAllAudio';
+                return;
+            }
+        }
+
+        //android ws
+        if( typeof(goofyPapa) !== "undefined" ){
+            goofyPapa.back();
+            return;
+        }
+
+        if(history.length) {
+            history.go(-1);
+            return;
+        }
+    }
 </script>
 
 <div id="template1" style="display: none">
