@@ -36,7 +36,7 @@ function GetQueryString(name){
 }
 $.ajax({
     type:"post",
-    url:"http://www.dadpat.com/dynasty/getAllList.do",
+    url:"https://www.goofypapa.com/dynasty/getAllList.do",
     dataType:"jsonp", //以键/值对的形式
     async:true,
     success:function(data){

@@ -152,7 +152,7 @@ window.onload = function () {
 
         var t_parameter3 = {};
         t_parameter3.dynastyId = dynastyIdI;
-        goofypapaPost( "http://www.dadpat.com/dynastyInfo/getAllList.do", t_parameter3, function( p_res ){
+        goofypapaPost( "https://www.goofypapa.com/dynastyInfo/getAllList.do", t_parameter3, function( p_res ){
             // alert(JSON.stringify(p_res) +'在轮播时判断是否收藏')
             var chaodaiData = p_res.data;  //拿到各个朝代的data
 
@@ -163,7 +163,7 @@ window.onload = function () {
                 var content = chaodaiData[j]["dynastyDescp"].split(";")[0]
                 var audioUrl = chaodaiData[j]['audio'][0]['attUrl']
                 var chaodaiName = chaodaiData[j]['dynastyName']
-                var s = $("#template1").html().replace("$img$", "http://www.dadpat.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "http://www.dadpat.com/" + audioUrl)
+                var s = $("#template1").html().replace("$img$", "https://www.goofypapa.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "https://www.goofypapa.com/" + audioUrl)
                 $("#swiper1").append(s);
 
             }
@@ -190,7 +190,7 @@ window.onload = function () {
         // alert(new Date().getTime()+"--------------------------begin")
         $.ajax({
             type: "post",
-            url: "http://www.dadpat.com/dynastyInfo/getAllList.do",
+            url: "https://www.goofypapa.com/dynastyInfo/getAllList.do",
             dataType: "jsonp", //以键/值对的形式
             async: true,
             data:{"dynastyId": dynastyIdI },
@@ -204,7 +204,7 @@ window.onload = function () {
                     var content = chaodaiData[j]["dynastyDescp"].split(";")[0]
                     var audioUrl = chaodaiData[j]['audio'][0]['attUrl']
                     var chaodaiName = chaodaiData[j]['dynastyName']
-                    var s = $("#template1").html().replace("$img$", "http://www.dadpat.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "http://www.dadpat.com/" + audioUrl)
+                    var s = $("#template1").html().replace("$img$", "https://www.goofypapa.com/" + imgUrl).replace("$chaodai$",chaodaiName).replace("$content$", content).replace("$audio$", "https://www.goofypapa.com/" + audioUrl)
                     $("#swiper1").append(s);
                 }
 
