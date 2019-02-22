@@ -7,8 +7,6 @@ window.onload = function () {
 // });
 
 
-
-
     /*3秒后将上下提示箭头隐藏*/
     setTimeout(function(){
         $('.icon').css('display','none')
@@ -119,8 +117,12 @@ window.onload = function () {
                 // $(".audioplay").pause()
 
                 // alert(isplay)
+                // isplay  = true;
                 if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
                     goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
+                        // isplay  = !isplay;
+                        // isplay = false
+                        $("#audio").attr("src","image/pause.png");
                     } );
                 }else if( typeof( window.android ) != "undefined" ) {
                     window.android.initMusic($('.swiper-slide-active input')[0].value);
@@ -128,9 +130,8 @@ window.onload = function () {
                 }else{
                     console.log(" p_url ");
                 }
-                isplay  = !isplay;
 
-
+                $("#audio").attr("src","image/play.png");
 
                 // $(".swiper-slide").find(".audioplay")[index].pause()
             },
@@ -140,9 +141,6 @@ window.onload = function () {
 
         }
     });
-
-
-
 
 
 
@@ -228,44 +226,61 @@ window.onload = function () {
 
 
 
-
-
-
-
     /*点击按钮播放音频*/
     $('.audio').on( 'touchstart',function(){
 
 
-
-
         index = SwiperList.realIndex
-        index1 = index+1
+        index1 = index+1;
         // alert(isplay)
-        if(!isplay){
 
+        if(($("#audio")[0].src).indexOf("image/play.png") != -1 ){
+            if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+                goofypapaStopAllAudio();
+            }else{
+                console.log(" p_url ");
+            }
+            $("#audio").attr("src","image/pause.png");
+        }else{
             if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
                 goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
-                } );
+                    $("#audio").attr("src","image/pause.png");
+                });
             }else if( typeof( window.android ) != "undefined" ) {
                 window.android.initMusic($('.swiper-slide-active input')[0].value);
                 window.android.startMusic();
             }else{
                 console.log(" p_url ");
             }
-
-            // $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
-
-        }else{
-
-            if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
-                goofypapaStopAllAudio();
-            }else{
-                console.log(" p_url ");
-            }
-
-            // $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
+            $("#audio").attr("src","image/play.png");
         }
-        isplay = !isplay
+
+        // if(!isplay){
+        //
+        //     if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+        //         goofypapaStopAllAndPlayAudio( $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].value, function(){
+        //             isplay = false
+        //         });
+        //     }else if( typeof( window.android ) != "undefined" ) {
+        //         window.android.initMusic($('.swiper-slide-active input')[0].value);
+        //         window.android.startMusic();
+        //     }else{
+        //         console.log(" p_url ");
+        //     }
+        //
+        //     // $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].play()
+        //
+        // }else{
+        //
+        //     if( typeof( goofypapaGame ) != "undefined" && goofypapaGame ){
+        //         goofypapaStopAllAudio();
+        //     }else{
+        //         console.log(" p_url ");
+        //     }
+        //
+        //     // $(".swiper-slide").find(".audioplay")[SwiperList.realIndex].pause()
+        // }
+        // isplay = !isplay;
     });
 
 
